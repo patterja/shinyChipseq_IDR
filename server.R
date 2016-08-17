@@ -11,7 +11,7 @@ reprodInput <- reactive({
            mutate(ksig=karenina_bayp$PP[ov_bayp$Qindex], msig=monty_bayp$PP[ov_bayp$Sindex])
   )
 })
-#-------------------------------------------- Correlations Curves
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Correlations Curves
 
 
 output$corrCurve_macs <- renderPlot({
@@ -98,13 +98,7 @@ bayp_idr<- reactive({
   filter(idr.out_bayp.IDR <= input$idrthresh)
 })
 
-# ovfilt<- reactive({
-#   macsidr<-reduce(makeGRangesFromDataFrame(macs_idr(), seqnames.field="space", start.field = "Qstart", end.field = "Qend"))
-#   baypidr<-makeGRangesFromDataFrame(mutate(bayp_idr(), min_start=min(Qstart, Sstart), max_end=max(Qend, Send)), 
-#                                     seqnames.field="space", start.field = "min_start", end.field = "max_end")
-#   
-#   olRanges(baypidr, macsidr)
-# })
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 output$reprodtable_macs<-renderDataTable({
   macs_idr() %>%
@@ -171,8 +165,5 @@ output$bayp_stattable <- renderTable({
                  sprintf('%1.3f',mean(monty_bayp$end-monty_bayp$start+1)))
     
   )})
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 })
