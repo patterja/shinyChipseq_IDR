@@ -1,10 +1,6 @@
 #############################
 ## Identify Range Overlaps ##
 #############################
-## Author: Thomas Girke
-## Last update: 8-Feb-11
-## Details on usage and use cases are available here:
-## http://manuals.bioinformatics.ucr.edu/home/ht-seq#TOC-Analysis-Routines-with-IRanges-Geno
 
 ## Utility: identify overlaps in range data sets, such as annotation or alignment positions defined
 ## by two IRanges/GRanges objects.  
